@@ -93,7 +93,7 @@ Object.keys(contentScripts).forEach(key => {
   if (cs.contentScripts) {
     setupContentScript(cs.extensionId, worldId, function (isolatedWorldWindow) {
       // native window open workaround
-      const ipcRenderer = require('@electron/internal/renderer/ipc-renderer-internal');
+      const ipcRenderer = require('electron').ipcRenderer;
       const { guestInstanceId, openerId } = process;
 
       // hardcoded gmelius extension id
